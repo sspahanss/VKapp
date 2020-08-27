@@ -14,6 +14,12 @@
 		E9C59D8B24EE2B400069C0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C59D8924EE2B400069C0BE /* Main.storyboard */; };
 		E9C59D8D24EE2B420069C0BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C59D8C24EE2B420069C0BE /* Assets.xcassets */; };
 		E9C59D9024EE2B420069C0BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C59D8E24EE2B420069C0BE /* LaunchScreen.storyboard */; };
+		E9D8B8A724F2CA7E00DDAB0D /* FullFriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8A624F2CA7E00DDAB0D /* FullFriendsListViewController.swift */; };
+		E9D8B8AA24F3841700DDAB0D /* FavoritesFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8A924F3841700DDAB0D /* FavoritesFriendsTableViewController.swift */; };
+		E9D8B8AD24F3B1E700DDAB0D /* FriendsCollectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8AC24F3B1E700DDAB0D /* FriendsCollectionCollectionViewController.swift */; };
+		E9D8B8B224F3B80B00DDAB0D /* FriendPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8B124F3B80B00DDAB0D /* FriendPhotoCollectionViewCell.swift */; };
+		E9D8B8B424F3C63200DDAB0D /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8B324F3C63200DDAB0D /* GroupTableViewController.swift */; };
+		E9D8B8B724F3C96300DDAB0D /* GroupPeopleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8B8B624F3C96300DDAB0D /* GroupPeopleListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		E9C59D8C24EE2B420069C0BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C59D8F24EE2B420069C0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9C59D9124EE2B420069C0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D8B8A624F2CA7E00DDAB0D /* FullFriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullFriendsListViewController.swift; sourceTree = "<group>"; };
+		E9D8B8A924F3841700DDAB0D /* FavoritesFriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFriendsTableViewController.swift; sourceTree = "<group>"; };
+		E9D8B8AC24F3B1E700DDAB0D /* FriendsCollectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionCollectionViewController.swift; sourceTree = "<group>"; };
+		E9D8B8B124F3B80B00DDAB0D /* FriendPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E9D8B8B324F3C63200DDAB0D /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		E9D8B8B624F3C96300DDAB0D /* GroupPeopleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPeopleListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +75,49 @@
 				E9C59D8724EE2B400069C0BE /* LoginViewController.swift */,
 				E93A6DEC24EECB3A006C7D03 /* TabBarViewController.swift */,
 				E9C59D8924EE2B400069C0BE /* Main.storyboard */,
+				E9D8B8B524F3C63700DDAB0D /* Groups */,
+				E9D8B8AE24F3B3A500DDAB0D /* friendPhoto */,
+				E9D8B8AB24F3841A00DDAB0D /* FavoritesFriend */,
+				E9D8B8A824F2CA8400DDAB0D /* FriendsList */,
 				E9C59D8C24EE2B420069C0BE /* Assets.xcassets */,
 				E9C59D8E24EE2B420069C0BE /* LaunchScreen.storyboard */,
 				E9C59D9124EE2B420069C0BE /* Info.plist */,
 			);
 			path = VKapp;
+			sourceTree = "<group>";
+		};
+		E9D8B8A824F2CA8400DDAB0D /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8B8A624F2CA7E00DDAB0D /* FullFriendsListViewController.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		E9D8B8AB24F3841A00DDAB0D /* FavoritesFriend */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8B8A924F3841700DDAB0D /* FavoritesFriendsTableViewController.swift */,
+			);
+			path = FavoritesFriend;
+			sourceTree = "<group>";
+		};
+		E9D8B8AE24F3B3A500DDAB0D /* friendPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8B8AC24F3B1E700DDAB0D /* FriendsCollectionCollectionViewController.swift */,
+				E9D8B8B124F3B80B00DDAB0D /* FriendPhotoCollectionViewCell.swift */,
+			);
+			path = friendPhoto;
+			sourceTree = "<group>";
+		};
+		E9D8B8B524F3C63700DDAB0D /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8B8B324F3C63200DDAB0D /* GroupTableViewController.swift */,
+				E9D8B8B624F3C96300DDAB0D /* GroupPeopleListTableViewController.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +194,13 @@
 				E93A6DED24EECB3A006C7D03 /* TabBarViewController.swift in Sources */,
 				E9C59D8824EE2B400069C0BE /* LoginViewController.swift in Sources */,
 				E9C59D8424EE2B400069C0BE /* AppDelegate.swift in Sources */,
+				E9D8B8A724F2CA7E00DDAB0D /* FullFriendsListViewController.swift in Sources */,
+				E9D8B8B724F3C96300DDAB0D /* GroupPeopleListTableViewController.swift in Sources */,
 				E9C59D8624EE2B400069C0BE /* SceneDelegate.swift in Sources */,
+				E9D8B8AD24F3B1E700DDAB0D /* FriendsCollectionCollectionViewController.swift in Sources */,
+				E9D8B8AA24F3841700DDAB0D /* FavoritesFriendsTableViewController.swift in Sources */,
+				E9D8B8B224F3B80B00DDAB0D /* FriendPhotoCollectionViewCell.swift in Sources */,
+				E9D8B8B424F3C63200DDAB0D /* GroupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
