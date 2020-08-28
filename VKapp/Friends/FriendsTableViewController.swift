@@ -8,27 +8,49 @@
 
 import UIKit
 
-class FavoritesFriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
+    var friends = [
+    User(name: "Виктор", icon: UIImage(named: "me")!),
+    User(name: "Павел", icon: UIImage(named: "me")!),
+    User(name: "Екатерина", icon: UIImage(named: "me")!),
+    User(name: "Андрей", icon: UIImage(named: "me")!),
+    User(name: "Михаил", icon: UIImage(named: "me")!),
+    ]
     
-    var favoriteFriends: [String] = []
     
     
     
-    // MARK: - Table view data source
     
+   @IBOutlet weak var searchBar: UISearchBar!
+    
+  
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBar.delegate = self
+        
+    }
+    
+    
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
-        return favoriteFriends.count
+        return friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteFriendCell", for: indexPath)
-        let friend = favoriteFriends[indexPath.row]
-        cell.textLabel?.text = friend
-        
-        return cell
-    }
+          let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! UserCell
+          let user = friends[indexPath.row]
+          cell.userName.text = user.name
+          cell.userImage.image = user.icon
+          cell.userName.textColor = .blue
+          return cell
+      }
+    
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -43,32 +65,12 @@ class FavoritesFriendsTableViewController: UITableViewController {
         
         switch editingStyle {
         case.delete:
-            favoriteFriends.remove(at: indexPath.row)
+            friends.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         default:
             break
         }
         
     }
-    
-    
-    @IBAction func addFriend(sender: Any){
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let fullFriendsListVC = storyboard.instantiateViewController(identifier: "FullFriendsListViewControllerID") as! FullFriendsListViewController
-        
-        fullFriendsListVC.friendHandler = self
-        
-        navigationController?.pushViewController(fullFriendsListVC, animated: true)
-    }
-}
-
-extension FavoritesFriendsTableViewController: FriendsHandler {
-    func friendChosen(friendName: String) {
-        favoriteFriends.append(friendName)
-        tableView.reloadData()
-    }
-    
     
 }
