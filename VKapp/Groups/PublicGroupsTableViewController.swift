@@ -8,32 +8,19 @@
 
 import UIKit
 
-//protocol GroupsHandler: class {
-//    func groupChosen(groupName: )
-//}
-
 class PublicGroupsTableViewController: UITableViewController {
 
-    
-    
-    
-    //weak var groupHandler: GroupsHandler? = nil
-    
-    
     var publicGroups = [
       Group(name: "Cars", icon: UIImage(named: "cars")!),
       Group(name: "Music", icon: UIImage(named: "music")!)
       ]
      
-
       override func viewDidLoad() {
           super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
           
       }
-
-    
 
       override func numberOfSections(in tableView: UITableView) -> Int {
           return 1
@@ -54,10 +41,4 @@ class PublicGroupsTableViewController: UITableViewController {
     
 }
 
-//extension PublicGroupsTableViewController: UITableViewDelegate {
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let group = publicGroups[indexPath.row]
-//        groupHandler?.groupChosen(groupName: Group.self)
-//        navigationController?.popViewController(animated: true)
-//    }
-//}
+

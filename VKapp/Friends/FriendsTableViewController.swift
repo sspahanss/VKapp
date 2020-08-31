@@ -17,10 +17,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     User(name: "Михаил", icon: UIImage(named: "me")!),
     ]
     
-    
-    
-    
-    
+
    @IBOutlet weak var searchBar: UISearchBar!
     
   
