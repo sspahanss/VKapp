@@ -26,6 +26,7 @@
 		E9E2B6B024F81D6D00A77747 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2B6AF24F81D6D00A77747 /* User.swift */; };
 		E9E2B6B224F8202E00A77747 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2B6B124F8202E00A77747 /* UserCell.swift */; };
 		E9E2B6B424F8BBC400A77747 /* PublicGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2B6B324F8BBC400A77747 /* PublicGroupsTableViewController.swift */; };
+		E9E2B6B624FD0CCB00A77747 /* FullScreenImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2B6B524FD0CCB00A77747 /* FullScreenImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E9E2B6AF24F81D6D00A77747 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E9E2B6B124F8202E00A77747 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		E9E2B6B324F8BBC400A77747 /* PublicGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicGroupsTableViewController.swift; sourceTree = "<group>"; };
+		E9E2B6B524FD0CCB00A77747 /* FullScreenImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				E9B9583F24F7F21200E078A7 /* Group.swift */,
 				E9B9584624F805C300E078A7 /* Gradient.swift */,
 				E9E2B6AF24F81D6D00A77747 /* User.swift */,
+				E9E2B6B524FD0CCB00A77747 /* FullScreenImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				E93A6DED24EECB3A006C7D03 /* TabBarViewController.swift in Sources */,
 				E9C59D8824EE2B400069C0BE /* LoginViewController.swift in Sources */,
+				E9E2B6B624FD0CCB00A77747 /* FullScreenImage.swift in Sources */,
 				E9C59D8424EE2B400069C0BE /* AppDelegate.swift in Sources */,
 				E9D8B8B724F3C96300DDAB0D /* GroupListTableViewController.swift in Sources */,
 				E9B9583E24F7DC6A00E078A7 /* CircleImage.swift in Sources */,

@@ -15,17 +15,13 @@ class GroupListTableViewController: UITableViewController {
     Group(name: "Cars", icon: UIImage(named: "cars")!)
     ]
    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-       
     }
-
-  
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -50,9 +46,7 @@ class GroupListTableViewController: UITableViewController {
         navigationController?.pushViewController(publicGroupListVC, animated: true)
         
     }
-    
-   
-    
+        
 }
 
 

@@ -19,25 +19,13 @@ class FriendsCollectionCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-       
-
-        
     }
 
-    
-    // MARK: - Navigation
-
-    
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
    
-
-    // MARK: UICollectionViewDataSource
-
-    
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -49,11 +37,8 @@ class FriendsCollectionCollectionViewController: UICollectionViewController {
         
         _ = friendsPhoto[indexPath.row]
         
-        
-    
+
         return cell
     }
-
-    
 
 }
