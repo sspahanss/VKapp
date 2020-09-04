@@ -11,15 +11,13 @@ import UIKit
 class UserCell: UITableViewCell {
     
     @IBOutlet weak var userName: UILabel!
-   @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userImage: UIImageView!
     
+    func config(user: User) {
+        userName.text = user.name
+        userImage.image = UIImage(named: user.iconName)!
+        userName.textColor = .systemIndigo
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-}
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-}
 }
 
