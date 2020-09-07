@@ -10,8 +10,8 @@ import UIKit
 
 struct User {
     let name: String
-    let icon: UIImage
+    let iconName: String
     var titleFirstLetter: String {
-        return String(self.name[self.name.startIndex]).uppercased()
+        return String(name.first!)
     }
 }
