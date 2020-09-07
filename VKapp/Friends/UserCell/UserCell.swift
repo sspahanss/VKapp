@@ -19,5 +19,10 @@ class UserCell: UITableViewCell {
         userName.textColor = .systemIndigo
     }
     
+    @IBOutlet weak var avatar: CircleView!
+    @IBAction override func increaseSize(_ sender: Any?) {
+        avatar.animatedButton(avatar)
+    }
+  
 }
 

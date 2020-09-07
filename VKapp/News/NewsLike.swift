@@ -26,8 +26,7 @@ class NewsLikeControl: UIControl {
         stack.isUserInteractionEnabled = false
         addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,4 +42,18 @@ class NewsLikeControl: UIControl {
             likeHeart.tintColor = .lightGray
         }
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+          let animation = CASpringAnimation(keyPath: "transform.scale")
+          animation.fromValue = 0.7
+          animation.toValue = 1
+          animation.stiffness = 200
+          animation.mass = 2
+          animation.duration = 2
+          animation.beginTime = CACurrentMediaTime()
+          animation.fillMode = CAMediaTimingFillMode.backwards
+          self.likeHeart.layer.add(animation, forKey: nil)
+          self.count.layer.add(animation, forKey: nil)
+      }
+    
 }

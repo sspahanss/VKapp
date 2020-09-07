@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="639" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ml8-Yf-sMK" customClass="CircleView" customModule="VKapp" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ml8-Yf-sMK" userLabel="Avatar" customClass="CircleView" customModule="VKapp" customModuleProvider="target">
                         <rect key="frame" x="583" y="5" width="46" height="46"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ciu-FF-dc6" customClass="CircleImage" customModule="VKapp" customModuleProvider="target">
@@ -31,6 +31,20 @@
                             <constraint firstAttribute="trailing" secondItem="Ciu-FF-dc6" secondAttribute="trailing" id="oOp-53-r8N"/>
                             <constraint firstAttribute="width" constant="46" id="olX-Ig-yXS"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.90000000000000002"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="increaseSize:" destination="Oxi-XN-yxD" eventType="touchUpInside" id="cLA-AA-xyU"/>
+                        </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nva-FF-X3f" userLabel="user name">
                         <rect key="frame" x="16" y="12" width="42" height="20.5"/>
@@ -51,6 +65,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="avatar" destination="ml8-Yf-sMK" id="ScH-LF-e1j"/>
                 <outlet property="userImage" destination="Ciu-FF-dc6" id="y1j-3w-VKA"/>
                 <outlet property="userName" destination="nva-FF-X3f" id="QdT-uc-7ka"/>
             </connections>
