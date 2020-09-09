@@ -23,4 +23,11 @@ class GroupTableCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 }
+    
+    @IBOutlet weak var groupAvatar: CircleView!
+    
+    @IBAction override func increaseSize(_ sender: Any?) {
+        groupAvatar.animatedButton(groupAvatar)
+    }
+    
 }

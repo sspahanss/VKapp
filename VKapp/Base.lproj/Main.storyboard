@@ -162,12 +162,68 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qUx-Nl-E8B"/>
+                        <segue destination="faD-WV-8dI" kind="relationship" relationship="rootViewController" id="GPf-7v-6zm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwE-px-QaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1568" y="-212"/>
+            <point key="canvasLocation" x="-2358" y="-186"/>
+        </scene>
+        <!--View Controller Launch-->
+        <scene sceneID="SWL-rI-YoD">
+            <objects>
+                <viewController id="faD-WV-8dI" customClass="ViewControllerLaunch" customModule="VKapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdA-14-78o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-6e-nTj" customClass="CircleImage" customModule="VKapp" customModuleProvider="target">
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B0i-TA-itg"/>
+                                    <constraint firstAttribute="width" constant="30" id="bvA-V6-zYL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-gv-IB2" customClass="CircleImage" customModule="VKapp" customModuleProvider="target">
+                                <rect key="frame" x="222.5" y="318.5" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R9N-Dy-jPm"/>
+                                    <constraint firstAttribute="width" constant="30" id="rX9-Lb-m4e"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-z8-EPT" customClass="CircleImage" customModule="VKapp" customModuleProvider="target">
+                                <rect key="frame" x="122.5" y="318.5" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="MgF-J1-Zpf"/>
+                                    <constraint firstAttribute="height" constant="30" id="g3q-2Z-p7K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4pf-6e-nTj" firstAttribute="leading" secondItem="wxf-z8-EPT" secondAttribute="trailing" constant="20" id="4Pm-v5-PgB"/>
+                            <constraint firstItem="4pf-6e-nTj" firstAttribute="centerY" secondItem="gdA-14-78o" secondAttribute="centerY" id="KCJ-bd-yF4"/>
+                            <constraint firstItem="g9c-gv-IB2" firstAttribute="centerY" secondItem="gdA-14-78o" secondAttribute="centerY" id="Nup-5n-3is"/>
+                            <constraint firstItem="wxf-z8-EPT" firstAttribute="centerY" secondItem="gdA-14-78o" secondAttribute="centerY" id="gSn-LA-jTm"/>
+                            <constraint firstItem="g9c-gv-IB2" firstAttribute="leading" secondItem="4pf-6e-nTj" secondAttribute="trailing" constant="20" id="peM-kf-bQn"/>
+                            <constraint firstItem="4pf-6e-nTj" firstAttribute="centerX" secondItem="gdA-14-78o" secondAttribute="centerX" id="zvf-xY-8gM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n96-xR-riC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kco-KS-Wsv"/>
+                    <connections>
+                        <outlet property="view1" destination="wxf-z8-EPT" id="6IT-6I-46S"/>
+                        <outlet property="view2" destination="4pf-6e-nTj" id="2Hv-Bp-pVz"/>
+                        <outlet property="view3" destination="g9c-gv-IB2" id="5kb-b9-55c"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Next" id="KnY-eI-Moj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhO-et-YJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1628" y="-201"/>
         </scene>
         <!--news-->
         <scene sceneID="rLD-Rd-4bX">
@@ -494,7 +550,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-8G-FSa" customClass="CircleView" customModule="VKapp" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-8G-FSa" userLabel="avatar" customClass="CircleView" customModule="VKapp" customModuleProvider="target">
                                             <rect key="frame" x="319" y="5" width="46" height="46.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-c2-u88" customClass="CircleImage" customModule="VKapp" customModuleProvider="target">
@@ -514,6 +570,20 @@
                                                 <constraint firstItem="Tr8-c2-u88" firstAttribute="leading" secondItem="KU6-8G-FSa" secondAttribute="leading" id="mPK-jh-Mzt"/>
                                                 <constraint firstAttribute="width" constant="46" id="opA-ex-53m"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.90000000000000002"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="increaseSize:" destination="8xC-pk-cRf" eventType="touchUpInside" id="EVH-Xs-44C"/>
+                                            </connections>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL1-If-D45" userLabel="Group Name">
                                             <rect key="frame" x="16" y="18" width="42" height="20.5"/>
@@ -532,6 +602,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="groupAvatar" destination="KU6-8G-FSa" id="ckt-cF-ZhM"/>
                                     <outlet property="groupImage" destination="Tr8-c2-u88" id="ER1-AQ-UlJ"/>
                                     <outlet property="groupName" destination="WL1-If-D45" id="Fqc-9D-K6m"/>
                                 </connections>
@@ -550,12 +621,6 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <view contentMode="scaleToFill" id="iRR-kh-HK1" customClass="CircleView" customModule="VKapp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="44" height="43"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <viewLayoutGuide key="safeArea" id="6gb-Kh-BxJ"/>
-                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLW-YJ-n9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1586.4000000000001" y="531.18440779610194"/>

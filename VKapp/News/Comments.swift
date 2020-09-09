@@ -36,4 +36,6 @@ class Comments: UIControl {
         count.textColor = .blue
         image.tintColor = .blue
     }
+    
+    
 }
