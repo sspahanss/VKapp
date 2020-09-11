@@ -15,23 +15,24 @@ struct FriendsView {
 
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     var friendsList = [
-        User(name: "Виктор", iconName: "me"),
-        User(name: "Виталий", iconName: "me"),
-        User(name: "Павел", iconName: "me"),
-        User(name: "Петр", iconName: "me"),
-        User(name: "Галина", iconName: "me"),
-        User(name: "Елена", iconName: "me"),
-        User(name: "Леонид", iconName: "me"),
-        User(name: "Екатерина", iconName: "me"),
-        User(name: "Андрей", iconName: "me"),
-        User(name: "Паша", iconName: "me"),
-        User(name: "Михаил", iconName: "me"),
-        User(name: "Юлия", iconName: "me"),
+        User(name: "Виктор", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Виталий", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Павел", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Петр", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Галина", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Елена", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Леонид", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Екатерина", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Андрей", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Паша", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Михаил", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Юлия", iconName: "me", image: [UIImage(named: "me")!]),
     ]
     
     
     var sortedList: [FriendsView] = []
     var searchedNames: [User] = []
+    var friendsFoto: [[User]] = [[]]
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -73,19 +74,19 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
             
             let letter = sorted[i].titleFirstLetter
             
-            var user1: [User] = []
+            var user: [User] = []
             
             for element in sorted[i...] {
                 if element.titleFirstLetter == letter {
-                    user1.append(element)
+                    user.append(element)
                 } else {
-                    output.append(FriendsView(letter: letter, users: user1))
+                    output.append(FriendsView(letter: letter, users: user))
                     break
                 }
             }
-            i += user1.count
+            i += user.count
             if i == input.count {
-                output.append(FriendsView(letter: letter, users: user1))
+                output.append(FriendsView(letter: letter, users: user))
             }
         }
         return output
@@ -110,7 +111,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let friendCollectionVC = storyboard.instantiateViewController(identifier: "collectionCell") as! FriendsCollectionCollectionViewController
+        let friendCollectionVC = storyboard.instantiateViewController(identifier: "collectionCell") as! FriendsCollectionViewController
         
         
         navigationController?.pushViewController(friendCollectionVC, animated: true)
@@ -138,5 +139,18 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? FriendsCollectionViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let friendImages = friendsFoto[indexPath.row][indexPath.row]
+                destination.friend = friendImages
+                
+            }
+            
+        }
+        
     }
 }

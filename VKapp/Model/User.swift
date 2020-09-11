@@ -8,10 +8,17 @@
 
 import UIKit
 
-struct User {
+class User {
     let name: String
     let iconName: String
+    let image: [UIImage]
     var titleFirstLetter: String {
         return String(name.first!)
     }
+    init(name: String, iconName: String, image: [UIImage]) {
+        self.name = name
+        self.iconName = iconName
+        self.image = image
+    }
+    
 }
