@@ -401,6 +401,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="8Lx-rx-3O0"/>
                     <connections>
                         <outlet property="searchBar" destination="gay-K5-GS5" id="Xew-GE-GxI"/>
+                        <segue destination="OjO-wN-52E" kind="show" id="c3z-HF-gxr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SG5-TG-MVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -451,6 +452,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="image" destination="5vP-X8-l3B" id="0CJ-Di-Mv7"/>
+                                    <segue destination="Ivy-4o-oKR" kind="presentation" identifier="FullScreen" modalPresentationStyle="fullScreen" id="LeQ-6P-qU6"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -463,21 +465,26 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LM7-Y1-kVe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="-537"/>
+            <point key="canvasLocation" x="2599" y="-537"/>
         </scene>
-        <!--View Controller-->
+        <!--Full Screen Image Controller-->
         <scene sceneID="w7d-7s-9i3">
             <objects>
-                <viewController id="Ivy-4o-oKR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FullScreen" id="Ivy-4o-oKR" customClass="FullScreenImageController" customModule="VKapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fu9-du-wZI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lVX-cj-fve">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lVX-cj-fve" userLabel="BigPhoto">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gX9-Jb-ngV" appends="YES" id="zsb-0c-0bE"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lVX-cj-fve" firstAttribute="top" secondItem="tOn-bc-sgJ" secondAttribute="top" id="XND-nc-u6H"/>
                             <constraint firstItem="lVX-cj-fve" firstAttribute="leading" secondItem="tOn-bc-sgJ" secondAttribute="leading" id="adV-O1-9lu"/>
@@ -490,10 +497,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tOn-bc-sgJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RQS-4R-mrV"/>
+                    <connections>
+                        <outlet property="bigPhoto" destination="lVX-cj-fve" id="Lin-Y1-teN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aP-9c-u0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gX9-Jb-ngV">
+                    <connections>
+                        <action selector="gesture:" destination="Ivy-4o-oKR" id="Lqo-qa-cKG"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3236" y="-542.87856071964018"/>
+            <point key="canvasLocation" x="3526" y="-537"/>
         </scene>
         <!--Group List Table View Controller-->
         <scene sceneID="1Bm-Gg-BvR">

@@ -15,24 +15,24 @@ struct FriendsView {
 
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     var friendsList = [
-        User(name: "Виктор", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Виталий", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Павел", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Петр", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Галина", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Елена", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Леонид", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Екатерина", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Андрей", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Паша", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Михаил", iconName: "me", image: [UIImage(named: "me")!]),
-        User(name: "Юлия", iconName: "me", image: [UIImage(named: "me")!]),
+        User(name: "Виктор", iconName: "me", image: ["me", "music"]),
+        User(name: "Виталий", iconName: "me", image: ["me"]),
+        User(name: "Павел", iconName: "me", image: ["me"]),
+        User(name: "Петр", iconName: "me", image: ["me"]),
+        User(name: "Галина", iconName: "me", image: ["me"]),
+        User(name: "Елена", iconName: "me", image: ["me"]),
+        User(name: "Леонид", iconName: "me", image: ["me"]),
+        User(name: "Екатерина", iconName: "me", image: ["me"]),
+        User(name: "Андрей", iconName: "me", image: ["me"]),
+        User(name: "Паша", iconName: "me", image: ["me"]),
+        User(name: "Михаил", iconName: "me", image: ["me"]),
+        User(name: "Юлия", iconName: "me", image: ["me"]),
     ]
     
     
     var sortedList: [FriendsView] = []
     var searchedNames: [User] = []
-    var friendsFoto: [[User]] = [[]]
+    
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -113,6 +113,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let friendCollectionVC = storyboard.instantiateViewController(identifier: "collectionCell") as! FriendsCollectionViewController
         
+        let friend = sortedList[indexPath.section].users[indexPath.row]
+        friendCollectionVC.friend = friend
         
         navigationController?.pushViewController(friendCollectionVC, animated: true)
     }
@@ -141,16 +143,5 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
         return 25
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let destination = segue.destination as? FriendsCollectionViewController {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let friendImages = friendsFoto[indexPath.row][indexPath.row]
-                destination.friend = friendImages
-                
-            }
-            
-        }
-        
-    }
+   
 }

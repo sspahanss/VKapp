@@ -112,7 +112,6 @@
 				E9B9583824F7D92F00E078A7 /* LikeControl.swift */,
 				E9B9583D24F7DC6A00E078A7 /* CircleImage.swift */,
 				E9B9584624F805C300E078A7 /* Gradient.swift */,
-				E9E2B6B524FD0CCB00A77747 /* FullScreenImage.swift */,
 				E9E2B6AF24F81D6D00A77747 /* User.swift */,
 			);
 			path = Model;
@@ -168,6 +167,7 @@
 		E9D8B8AE24F3B3A500DDAB0D /* friendPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				E9E2B6B524FD0CCB00A77747 /* FullScreenImage.swift */,
 				E9D8B8AC24F3B1E700DDAB0D /* FriendsCollectionViewController.swift */,
 				E91ECFB3250B308E002108F7 /* CollectionViewCell.swift */,
 			);
