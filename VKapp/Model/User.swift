@@ -8,15 +8,20 @@
 
 import UIKit
 
+struct ImageStat {
+    var imageName: String
+    var likeCount: Int
+}
+
 class User {
     let name: String
     let iconName: String
-    let image: [String]
+    let image: [ImageStat]
     
     var titleFirstLetter: String {
         return String(name.first!)
     }
-    init(name: String, iconName: String, image: [String]) {
+    init(name: String, iconName: String, image: [ImageStat]) {
         self.name = name
         self.iconName = iconName
         self.image = image
