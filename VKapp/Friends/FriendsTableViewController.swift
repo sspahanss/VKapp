@@ -15,19 +15,46 @@ struct FriendsView {
 
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
     var friendsList = [
-        User(name: "Виктор", iconName: "me", image: ["me", "music"]),
-        User(name: "Виталий", iconName: "me", image: ["me"]),
-        User(name: "Павел", iconName: "me", image: ["me"]),
-        User(name: "Петр", iconName: "me", image: ["me"]),
-        User(name: "Галина", iconName: "me", image: ["me"]),
-        User(name: "Елена", iconName: "me", image: ["me"]),
-        User(name: "Леонид", iconName: "me", image: ["me"]),
-        User(name: "Екатерина", iconName: "me", image: ["me"]),
-        User(name: "Андрей", iconName: "me", image: ["me"]),
-        User(name: "Паша", iconName: "me", image: ["me"]),
-        User(name: "Михаил", iconName: "me", image: ["me"]),
-        User(name: "Юлия", iconName: "me", image: ["me"]),
-    ]
+        User(name: "Виктор", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0),
+                                                     ImageStat(imageName: "me", likeCount: 0),
+                                                     ImageStat(imageName: "music", likeCount: 0),
+                                                     ImageStat(imageName: "victor", likeCount: 0),
+                                                     ImageStat(imageName: "victor1", likeCount: 0)
+        ]),
+        User(name: "Виталий", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Павел", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Петр", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Галина", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Елена", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Леонид", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Екатерина", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Андрей", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Паша", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Михаил", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)]),
+        User(name: "Юлия", iconName: "me", image: [ImageStat(imageName: "me", likeCount: 0)])]
     
     
     var sortedList: [FriendsView] = []
@@ -143,5 +170,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate{
         return 25
     }
     
-   
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sortedList.map {$0.letter}
+    }
+    
 }

@@ -12,7 +12,15 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+   
+    @IBOutlet weak var likeControl : LikeCounterControl!
+    
+   
+    func config(imageStat: ImageStat) {
+        
+        image.image = UIImage(named: imageStat.imageName)
+        likeControl.countOfLikes = imageStat.likeCount
+      
     }
+ 
 }
