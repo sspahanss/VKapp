@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController2: UIViewController {
+class AnimatedViewController: UIViewController {
     
     @IBOutlet weak var vkImage: UIImageView!
     @IBOutlet weak var regButton: UIButton!

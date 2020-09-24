@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class LoginViewController: UIViewController {
     
@@ -56,4 +57,9 @@ class LoginViewController: UIViewController {
     
 }
 
-
+extension LoginViewController: WKNavigationDelegate {
+    
+    
+  
+    
+}
